@@ -32,7 +32,6 @@ distances = {
 }
 
 
-
 # Функция для получения расстояния между городами
 def get_distance(city1, city2):
     return distances.get((city1, city2)) or distances.get((city2, city1), float('inf'))
@@ -64,7 +63,7 @@ problem = TSPProblem(initial='Ставрополь', goal='Краснодар')
 
 # Поиск решения методом полного перебора
 def search_tsp(problem):
-    frontier = PriorityQueue([Node(problem.initial)])  # Исправление: удален лишний кортеж
+    frontier = PriorityQueue([Node(problem.initial)])
     explored = set()
 
     while frontier:
